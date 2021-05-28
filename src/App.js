@@ -7,11 +7,18 @@ import {
 } from "react-router-dom";
 
 import Home from './components/Home/Home/Home';
+import About from './components/About/About';
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/'>
+        <Route path='/home'>
+            <Home />
+        </Route>
+        <Route path='/about'>
+            <About />
+        </Route>
+        <Route exact path='/'>
             <Home />
         </Route>
       </Switch>

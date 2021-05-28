@@ -1,0 +1,22 @@
+.header-container {
+    height: 750px;
+    position:relative;
+    background-image: url('../../../images/chair-bg.png');
+    background-size: cover;
+}
+.header-container::after {
+    height:700px;
+    content:' ';
+    position: absolute;
+    top: 0;
+    width: 29%;
+    right: 0;
+    background-color: #3A4256;
+    z-index: -1;
+}
+@media screen and (max-width:768px){
+    .header-container{
+        height: 1050px;
+        padding:20px;
+    }
+}

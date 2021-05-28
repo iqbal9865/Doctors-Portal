@@ -1,0 +1,20 @@
+.nav-link {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 17px;
+}
+@media screen and (min-width: 1200px){
+    #logo{
+        margin-left: 55px;
+    }
+}
+@media screen and (max-width: 768px){
+    #logo{
+        margin-left: -20px;
+    }
+}
+@media screen and (max-width:1000px){
+    .nav-link{
+        color: #3A4256!important;
+    }
+}
