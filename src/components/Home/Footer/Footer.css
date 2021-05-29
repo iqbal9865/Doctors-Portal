@@ -1,0 +1,9 @@
+.link,.link-p{
+    text-decoration: none;
+    display: block;
+    font-size:20px;
+    color: gray;
+}
+.link:hover{
+    color: #17d3c2
+}

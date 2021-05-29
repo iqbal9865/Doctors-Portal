@@ -1,0 +1,9 @@
+.contact-section{
+    background-color: #3A4256;
+}
+#exampleInputEmail1,
+#subject,
+#exampleFormControlTextarea1{
+    border-radius: 0;
+    border: none;
+}

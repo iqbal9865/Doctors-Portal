@@ -1,0 +1,26 @@
+/* img{
+    width:450px;
+} */
+@media screen and (max-width:668px) {
+    #img{
+        width:310px!important;
+        /* height: 300px!important; */
+       
+    }
+   
+}
+@media screen and (max-width:760px) {
+    #img{
+        width:360px!important;
+        /* height: 350px!important; */
+    }
+   
+}
+/* @media screen and (max-width:990px) {
+    #img{
+        width:850px!important;
+        /* height: 580px!important; */
+    /* } */
+   
+/* } */
+
