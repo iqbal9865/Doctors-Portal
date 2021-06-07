@@ -13,20 +13,20 @@ const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav w-100 justify-content-end">
               <li class="nav-item">
-                <Link to='/' style={{color: '#3A4256'}} class="nav-link mx-4" aria-current="page" href="#">Home</Link>
+                <Link to='/' style={{color: '#17d3c2'}} class="nav-link mx-4" aria-current="page" href="#">Home</Link>
               </li>
               <li class="nav-item">
-                <Link to="/about" style={{color: '#3A4256'}} class="nav-link mx-4" href="#">About</Link>
+                <Link to="/about" style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">About</Link>
               </li>
               <li class="nav-item">
-                <a  style={{color: '#3A4256'}} class="nav-link mx-4" href="#">Dental Services</a>
+                <a  style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Dental Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-4 text-white" href="#">Reviews</a>
+                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Reviews</a>
               </li><li class="nav-item">
-                <a class="nav-link mx-4 text-white" href="#">Blogs</a>
+                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Blogs</a>
               </li><li class="nav-item">
-                <a class="nav-link mx-4 text-white" href="#">Contact Us</a>
+                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Contact Us</a>
               </li>
             </ul>
             

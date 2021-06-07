@@ -8,6 +8,7 @@ import {
 
 import Home from './components/Home/Home/Home';
 import About from './components/About/About';
+import Appointment from './components/Appointment/Appointment/Appointment'
 function App() {
   return (
     <Router>
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path='/about'>
             <About />
+        </Route>
+         <Route path='/appointment'>
+            <Appointment />
         </Route>
         <Route exact path='/'>
             <Home />

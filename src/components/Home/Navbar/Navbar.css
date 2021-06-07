@@ -3,6 +3,9 @@
     cursor: pointer;
     font-size: 17px;
 }
+.nav-link:hover{
+    text-decoration: underline;
+}
 @media screen and (min-width: 1200px){
     #logo{
         margin-left: 55px;
