@@ -31,9 +31,17 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn}) => {
           <h2 className='text-center' style={{color:'#17d3c2'}}>{appointmentOn}</h2>
           {/* <button onClick={closeModal}>close</button> */}
           <form onSubmit={handleSubmit(onSubmit)}>
-          <input {...register("example")} /> <br /> <br />
-          <input {...register("exampleRequired", { required: true })} /> <br /> <br />
-          {errors.exampleRequired && <span>This field is required</span>}
+          <div className='form-group my-3'>
+            <input className='form-control' placeholder='Enter Your Name' {...register("example", { required: true })} /> 
+          </div>
+          <div className='form-group my-3'>
+            <input className='form-control' placeholder='Enter Your Phone' {...register("exampleRequired", { required: true })} /> 
+            {errors.exampleRequired && <span>This field is required</span>}
+          </div>
+          <div className='form-group my-3'>
+            <input className='form-control' placeholder='Enter Your Email' {...register("exampleRequired", { required: true })} /> 
+            {errors.exampleRequired && <span>This field is required</span>}
+          </div>
           <input type="submit" />
         </form>
         </Modal>
