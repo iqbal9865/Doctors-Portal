@@ -1,6 +1,5 @@
 import React from 'react';
-// import { useState } from 'react';
-// import ReactDOM from 'react-dom';
+
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 const customStyles = {
@@ -76,5 +75,4 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn,date}) => {
         </div>
     );
 };
-
 export default AppointmentForm;
