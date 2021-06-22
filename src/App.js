@@ -13,7 +13,10 @@ import Appointment from './components/Appointment/Appointment/Appointment'
 import Login from './components/Login/Login'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
-import AppointmentDataTable from './components/Dashboard/AppointmentDataTable/AppointmentDataTable';
+// import AppointmentDataTable from './components/Dashboard/AppointmentDataTable/AppointmentDataTable';
+import AllPatients from './components/AllPatients/AllPatients';
+import AddDoctor from './components/AddDoctor/AddDoctor';
+
 export const UserContext = createContext();
 
 function App() {
@@ -42,14 +45,20 @@ function App() {
             
         </PrivateRoute>
         <PrivateRoute path='/doctor/appointment'>
-            <AppointmentDataTable />
-        </PrivateRoute>
-        <PrivateRoute path='/doctor/patients'>
             
         </PrivateRoute>
+        <PrivateRoute path='/doctor/patients'>
+            <AllPatients></AllPatients>
+        </PrivateRoute>
+
         <PrivateRoute path='/doctor/prescriptions'>
             
         </PrivateRoute>
+
+        <PrivateRoute path='/doctor/addDoctor'>
+            <AddDoctor></AddDoctor>
+        </PrivateRoute>
+
         <PrivateRoute path='/doctor/setting'>
             
         </PrivateRoute>

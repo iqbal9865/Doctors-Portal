@@ -4,10 +4,12 @@
 }
 .sidebar li{
     margin-bottom: 2em;
+    
 }
 .sidebar li span{
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 500;
+    
 }
 
 /* .sidebar li:hover span{
