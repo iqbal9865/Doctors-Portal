@@ -1,10 +1,12 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, useContext} from 'react';
 import SideBar from '../SideBar/SideBar'
 import AppointmentByDate from '../AppointmentByDate/AppointmentByDate'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import { UserContext } from '../../../App';
 
 const Dashboard = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [selectedDate, setSelectedDate] = useState(new Date())
     const [appointments, setAppointments] = useState([])
     const handleDateChange = (date) => {
@@ -16,7 +18,7 @@ const Dashboard = () => {
             headers: { 
                 'content-type':'application/json'
             },
-            body: JSON.stringify({date: selectedDate})
+            body: JSON.stringify({date: selectedDate, email: loggedInUser.email})
         })
         .then(res => res.json())
         .then(data => setAppointments(data))

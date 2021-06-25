@@ -1,6 +1,6 @@
 import React from 'react';
 import AppointmentShortList from '../AppointmentShortList/AppointmentShortList';
-import AppointmentDataTable from '../AppointmentDataTable/AppointmentDataTable';
+// import AppointmentDataTable from '../AppointmentDataTable/AppointmentDataTable';
 const AppointmentByDate = ({appointments}) => {
     return (
         <div>

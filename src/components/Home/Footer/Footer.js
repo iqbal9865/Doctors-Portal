@@ -2,9 +2,9 @@ import React from 'react';
 import './Footer.css'
 const Footer = () => {
     return (
-       <section className='footer-section mt-5'>
+       <section style={{backgroundColor: '#F4FDFB'}} className='footer-section mt-5'>
             <div className="container">
-                <div className="row mt-5 px-5 pt-4">
+                <div className="row px-5 pt-4">
                     <div className="col-md-3">
                         <a className="link" href="">Emergency Dental Care</a>
                         <a className="link" href="">Check Up</a>

@@ -19,10 +19,10 @@ const Navbar = () => {
                 <Link to="/about" style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">About</Link>
               </li>
               <li class="nav-item">
-                <a  style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Dental Services</a>
+                <Link to='/dashboard/appointment' style={{color: '#17d3c2'}} class="nav-link mx-4">Dashboard</Link>
               </li>
               <li class="nav-item">
-                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Reviews</a>
+                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Admin</a>
               </li><li class="nav-item">
                 <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Blogs</a>
               </li><li class="nav-item">
