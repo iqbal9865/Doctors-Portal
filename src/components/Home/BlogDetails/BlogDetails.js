@@ -1,6 +1,8 @@
 import React from 'react';
-import './BlogDetails.css'
+import './BlogDetails.css';
+
 const BlogDetails = ({blog}) => {
+    
     return (
         <div style={{width:'22rem', boxSizing: 'border-box'}} className={`text-white col-md-4 card m-2 m-auto my-2 color-${blog.bgColor}`}>
             <div className='d-flex'>

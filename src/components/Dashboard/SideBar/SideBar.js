@@ -18,49 +18,54 @@ const SideBar = () => {
         .then(data => setIsDoctor(data))
     }, [])
     return (
-        
-        <div style={{height:"100vh"}} className='py-5 px-4 sidebar d-flex flex-column justify-content-between col-md-2'>
-            <ul className="list-unstyled">
-                <li>
-                    <Link  style={{textDecoration:'none'}} to="/doctor/dashboard" className="text-white">
-                        <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span> 
+        <nav style={{width:'40vh'}} class="navbar navbar-expand-lg navbar-light col-md-2">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse sidebar px-5 " id="navbarSupportedContent">
+            <ul class="navbar-nav justify-content-end nav flex-column">
+                <li className='nav-item'>
+                    <Link  style={{textDecoration:'none'}} to="/doctor/dashboard" className="text-white nav-link my-3">
+                        <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
                     </Link>
                 </li>
-                <li>
-                    <Link style={{textDecoration:'none'}} to="/doctor/appointment" className="text-white">
-                        <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span> 
+                <li className='nav-item'>
+                    <Link style={{textDecoration:'none'}} to="/doctor/appointment" className="text-white nav-link my-3">
+                        <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span>  
                     </Link>
                 </li>
-                <li>
-                    <Link  style={{textDecoration:'none'}} to="/doctor/prescriptions" className="text-white">
-                        <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span>
+                <li className='nav-item'>
+                    <Link  style={{textDecoration:'none'}} to="/doctor/prescriptions" className="text-white nav-link my-3">
+                        <FontAwesomeIcon icon={faFileAlt} /> <span> Prescriptions</span>
                     </Link>
                 </li>
                 {isDoctor && <div>
-                <li>
-                    <Link  style={{textDecoration:'none'}} to="/doctor/patients" className="text-white">
+                <li className='nav-item'>
+                    <Link  style={{textDecoration:'none'}} to="/doctor/patients" className="text-white nav-link my-3">
                         <FontAwesomeIcon icon={faUsers} /> <span>Patients</span>
                     </Link>
                 </li>
                
-                <li>
-                    <Link  style={{textDecoration:'none'}} to="/doctor/addDoctor" className="text-white">
-                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
+                <li className='nav-item'>
+                    <Link  style={{textDecoration:'none'}} to="/doctor/addDoctor" className="text-white nav-link my-3">
+                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span> 
                     </Link>
                 </li>
-                <li>
-                    <Link  style={{textDecoration:'none'}} to="/doctor/setting" className="text-white" >
+                <li className='nav-item'>
+                    <Link  style={{textDecoration:'none'}} to="/doctor/setting" className="text-white nav-link my-3" >
                       <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                     </Link>
                 </li>
                 </div>}
+            
+
+                <li className='nav-item'>
+                <Link  style={{textDecoration:'none'}} to="/" className="text-white nav-link my-3"><FontAwesomeIcon icon={faSignOutAlt} /> <span> Logout </span></Link>
+                </li>
             </ul>
-
-            <div>
-                <Link  style={{textDecoration:'none'}} to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
-            </div>
-
         </div>
+        </nav>
     );
 };
 

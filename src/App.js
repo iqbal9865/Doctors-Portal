@@ -16,6 +16,8 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 // import AppointmentDataTable from './components/Dashboard/AppointmentDataTable/AppointmentDataTable';
 import AllPatients from './components/AllPatients/AllPatients';
 import AddDoctor from './components/AddDoctor/AddDoctor';
+import MyBlogs from './components/MyBlogs/MyBlogs';
+import ContactForm from './components/ContactForm/ContactForm';
 
 export const UserContext = createContext();
 
@@ -30,6 +32,12 @@ function App() {
         </Route>
         <Route path='/about'>
             <About />
+        </Route>
+        <Route path='/contact'>
+            <ContactForm />
+        </Route>
+        <Route path='/blogs'>
+            <MyBlogs />
         </Route>
         <Route path='/login'>
             <Login />

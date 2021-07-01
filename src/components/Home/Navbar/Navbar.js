@@ -22,11 +22,13 @@ const Navbar = () => {
                 <Link to='/dashboard/appointment' style={{color: '#17d3c2'}} class="nav-link mx-4">Dashboard</Link>
               </li>
               <li class="nav-item">
-                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Admin</a>
-              </li><li class="nav-item">
-                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Blogs</a>
-              </li><li class="nav-item">
-                <a style={{color: '#17d3c2'}} class="nav-link mx-4" href="#">Contact Us</a>
+                <Link to='/appointment' style={{color: '#17d3c2'}} class="nav-link mx-4">Appointment</Link>
+              </li>
+              <li class="nav-item">
+                <Link to='/blogs' style={{color: '#17d3c2'}} class="nav-link mx-4">Blog</Link>
+              </li>
+              <li class="nav-item">
+                <Link to='/contact' style={{color: '#17d3c2'}} class="nav-link mx-4">Contact</Link>
               </li>
             </ul>
             

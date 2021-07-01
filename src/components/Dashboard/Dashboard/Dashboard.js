@@ -25,7 +25,8 @@ const Dashboard = () => {
 
     },[selectedDate])
     return (
-        <section style={{backgroundColor: '#F4FDFB',height: '100%'}} className=' row'>
+        <section style={{backgroundColor: '#F4FDFB',height: '100%'}} className=' row my-3'>
+            
             <div className="col-md-2">
                 <SideBar></SideBar>
             </div>
