@@ -31,7 +31,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link style={{textDecoration:'none'}} to="/doctor/appointment" className="text-white nav-link my-3">
+                    <Link style={{textDecoration:'none'}} to="/appointment" className="text-white nav-link my-3">
                         <FontAwesomeIcon icon={faCalendar} /> <span>Appointment</span>  
                     </Link>
                 </li>

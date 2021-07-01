@@ -40,11 +40,14 @@ const AddDoctor = () => {
         
     return(
         <div className='row'>
-            <SideBar />
-            <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "" }}>
-                <h4>Add Doctor</h4>
+            <div className='col-md-2'>
+                <SideBar />
+            </div>
+           
+            <div className="col-md-8 p-5" style={{  }}>
+                <h4 className='px-2'>Add Doctor</h4>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form className='px-2' onSubmit={handleSubmit(onSubmit)}>
 
                     <div className='form-group py-4'>
                     <input onBlur={handleBlur} placeholder='Enter Name' type="text" className="form-control" required name='name' />
