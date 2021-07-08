@@ -26,8 +26,8 @@ const SideBar = () => {
         <div class="collapse navbar-collapse sidebar px-5 " id="navbarSupportedContent">
             <ul class="navbar-nav justify-content-end nav flex-column">
                 <li className='nav-item'>
-                    <Link  style={{textDecoration:'none'}} to="/doctor/dashboard" className="text-white nav-link my-3">
-                        <FontAwesomeIcon icon={faGripHorizontal} /> <span>Dashboard</span>
+                    <Link  style={{textDecoration:'none'}} to="/addReview" className="text-white nav-link my-3">
+                        <FontAwesomeIcon icon={faGripHorizontal} /> <span>Add Review</span>
                     </Link>
                 </li>
                 <li className='nav-item'>

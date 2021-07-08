@@ -12,6 +12,7 @@ const AddDoctor = () => {
         setFile(newFile)
     }
     const handleBlur = (e) => {
+        console.log(e.target.value)
         const newInfo = {...info};
         newInfo[e.target.name] = e.target.value;
         setInfo(newInfo);
@@ -44,7 +45,7 @@ const AddDoctor = () => {
                 <SideBar />
             </div>
            
-            <div className="col-md-8 p-5" style={{  }}>
+            <div className="col-md-8 p-5">
                 <h4 className='px-2'>Add Doctor</h4>
 
                 <form className='px-2' onSubmit={handleSubmit(onSubmit)}>

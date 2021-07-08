@@ -1,11 +1,12 @@
 import React from 'react';
 
 const TestimonialDetails = ({testimonial}) => {
+    console.log('data found ',testimonial)
     return (
         
         <div style={{width:'22rem', boxSizing: 'border-box'}} className='col-md-4 card m-2 m-auto my-2'>
             
-            <p style={{textAlign: 'justify'}} className='p-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rerum voluptatum, impedit, a provident voluptatibus ipsam quisquam porro ipsa, asperiores laboriosam quae fugit officiis eum commodi sit. Ea id sit aliquam ipsum at sint nulla facere voluptate nisi excepturi? Ullam!</p>
+            <p style={{textAlign: 'justify'}} className='p-4'>{testimonial.review}</p>
             <div className='d-flex px-2'>
                 <div>
                     <img src={testimonial.img} className='img-fluid' alt="" />
