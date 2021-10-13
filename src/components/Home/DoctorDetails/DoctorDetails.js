@@ -9,7 +9,8 @@ const DoctorDetails = ({doctor}) => {
             </div>
             <div style={{textAlign: 'center'}}>
                 <h4>{doctor.name}</h4>
-                <p style={{color:'gray'}}>{doctor.email}</p>
+                <br/>
+                {/* <p style={{color:'gray'}}>{doctor.email}</p> */}
             </div>
         </div>
     );
