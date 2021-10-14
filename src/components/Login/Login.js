@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import firebase from "firebase/app";
+import firebase from "firebase/app" 
 import "firebase/auth";
 import firebaseConfig from '../../firebase.config'
 import loginImage from '../../images/loginImage.png'
@@ -17,7 +17,7 @@ const Login = () => {
     let { from } = location.state || { from: { pathname: "/" } };
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
+    const [newUser, setNewUser] = useState(false)
     var googleProvider = new firebase.auth.GoogleAuthProvider();
     var facebookProvider = new firebase.auth.FacebookAuthProvider();
 
@@ -27,7 +27,8 @@ const Login = () => {
         email : '',
         password : '',
         success: false,
-        error : ''
+        error : '',
+        newUser: false
     })
 
     const handleGoogleSignIn = () => {
@@ -91,7 +92,7 @@ const Login = () => {
         }
     }
     const handleSubmit = (e) => {
-        if(user.email && user.password) {
+        if(newUser && user.email && user.password) {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
             .then((userCredential) => {
               var user = userCredential.user;
@@ -99,7 +100,9 @@ const Login = () => {
               newUserInfo.success = true;
               newUserInfo.error = '';
               setUser(newUserInfo)
-             
+              setLoggedInUser(newUserInfo)
+              updateUserInfo(user.name)
+              history.replace(from);
             })
             .catch((error) => {
             //   var errorCode = error.code;
@@ -110,36 +113,74 @@ const Login = () => {
               setUser(newUserInfo)
             });
         }
+        if(!newUser && user.email && user.password) {
+            firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+            .then((userCredential) => {
+                
+              var user = userCredential.user;
+              const newUserInfo = {...user}
+              newUserInfo.success = true;
+              newUserInfo.error = '';
+              setUser(newUserInfo)
+              setLoggedInUser(newUserInfo)
+              console.log('sign in user: ', user)
+              history.replace(from);
+            })
+            .catch((error) => {
+                //   var errorCode = error.code;
+              var errorMessage = error.message;
+              const newUserInfo = {...user}
+              newUserInfo.error = errorMessage;
+              newUserInfo.success = false;
+              setUser(newUserInfo)
+            });
+        }
         e.preventDefault();
+    }
+    const updateUserInfo = (name) => {
+        var user = firebase.auth().currentUser;
+        user.updateProfile({
+        displayName: name,
+        
+        }).then(function() {
+            console.log('user name updated successfully')
+        }).catch(function(error) {
+            console.log('error:',error)
+        });
     }
 
     return(
         <div className='row my-5 container m-auto'>
-            <div className="col-md-5 my-5">
-                <h4 className='mt-5'>LOGIN</h4>
+            <div className="col-md-5 my-4">
+                <h4 className='mt-2'>{newUser ? 'USER REGISTRATION' : 'LOGIN'}</h4>
                 <form onSubmit={handleSubmit}>
                 <div className='form-group my-3 mt-4'>
+                    <input type='checkbox' name="newUser" id='' onChange = {() => setNewUser(!newUser)} />
+                    <label htmlFor=""><span style={{padding:'5px', fontWeight:'600'}}>New User Registration</span></label>
+                </div>
+                {newUser && <div className='form-group mt-2'>
+                    <input placeholder='Enter Your Name' className='form-control' type="text" required onBlur={handleBlur} name='name' />
+                </div>}
+                <div className='form-group my-3 mt-3'>
                     <input placeholder='Enter Your Email' className='form-control' type="email" required onBlur={handleBlur} name='email' />
                 </div>
                 <div className='form-group my-3'>
                     <input placeholder='Enter Your Password' className='form-control' type="password" required onBlur={handleBlur} name='password' />
                 </div>
-               <input type="submit" value="LOGIN" style={{padding:'11px 36px',backgroundColor:'#17d3c2', fontSize:'17px', fontWeight:'700',color:'white',border:'none'}} />    
+               <input type="submit" value={newUser? 'SIGN UP' : 'LOGIN'} style={{padding:'11px 36px',backgroundColor:'#17d3c2', fontSize:'17px', fontWeight:'700',color:'white',border:'none'}} />    
                 </form>  
                 <p style={{color:'red'}}>{user.error}</p>
-                {user.success && <p style={{color: 'green'}}>New User Created Successfully</p>}
+                {user.success && <p style={{color: 'green'}}>User {newUser ? 'Created' : 'Logged In'} Successfully</p>}
+                
                 <br/>  
                 <button onClick={handleGoogleSignIn}  style={{padding:'11px 36px',backgroundColor:'#fc3c53', fontSize:'17px', fontWeight:'700',color:'white',border:'none'}} >SignUp Using Google</button>
                 <br/>  <br/>
                 <button onClick={handleFacebookSignIn}  style={{padding:'11px 40px',backgroundColor:'#4e15c4', fontSize:'17px', fontWeight:'700',color:'white',border:'none'}} >SignUp Using Facebook</button> <br/><br/>
-                <p  className='text-secondary'>Right Now You can only sign up using Google and Facebook, Email login system coming soon! </p>
+               
             </div>
             <div className="col-md-6 offset-1 d-none d-md-block">
-                <img className='img-fluid' style={{maxWidth:'100%', width:'550px', height:'auto'}} src={loginImage} alt='login' />
-                
-                
+                <img className='img-fluid' style={{maxWidth:'100%', width:'550px', height:'auto'}} src={loginImage} alt='login' />            
             </div>
-           
         </div>
     )
 }
